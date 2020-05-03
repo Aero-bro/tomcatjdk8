@@ -8,7 +8,7 @@ pipeline{
                                   println "--------------"
                                   println out
                                   if(out == 0){
-                                    sh "rm -rf feitest"
+                                    sh "rm -rf tomcatjdk8"
                                   }
                         }
                sh "git clone https://github.com/Aero-bro/tomcatjdk8.git"
@@ -20,7 +20,7 @@ pipeline{
                sh "docker -v"
                sh "docker build -t tomcatjdk8 ."
                sh "docker login --username=慈航普渡aero --password=Zf666888? registry.cn-hangzhou.aliyuncs.com"
-               sh "docker tag backend registry.cn-hangzhou.aliyuncs.com/aero_bro/tomcatjdk8:tomcatjdk8"
+               sh "docker tag tomcatjdk8 registry.cn-hangzhou.aliyuncs.com/aero_bro/tomcatjdk8:tomcatjdk8"
                sh "docker push registry.cn-hangzhou.aliyuncs.com/aero_bro/tomcatjdk8:tomcatjdk8"
             }
         }
